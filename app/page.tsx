@@ -19,7 +19,7 @@ export default function Home() {
     <main>
       <header className="header">
         <a className="brand officialBrand" href="#top" aria-label="BULTAUN home">
-          <img src="/bultaun-logo.svg" alt="BULTAUN Gold Exports Limited" />
+          <img src="/bultaun-logo.svg" alt="BULTAUN Gold Exports Limited" style={{ width: 150, height: 74, objectFit: "contain" }} />
         </a>
         <nav>
           <a href="#about">About</a><a href="#approach">Our Approach</a><a href="#services">Services</a>
@@ -82,7 +82,7 @@ export default function Home() {
         <form><input placeholder="Full name"/><input type="email" placeholder="Email address"/><select defaultValue=""><option value="" disabled>Enquiry type</option><option>Landowner / AML partnership</option><option>Investor interest</option><option>Strategic partnership</option><option>General enquiry</option></select><textarea rows={5} placeholder="Tell us how you would like to work with BULTAUN"/><button type="button" className="button darkButton">Submit Enquiry</button><small>Demonstration form — email delivery will be connected before launch.</small></form>
       </section>
 
-      <footer><div className="footerLogo"><img src="/bultaun-logo.svg" alt="BULTAUN Gold Exports Limited" /></div><p>Partnership • Integrity • Prosperity</p><p>© 2026 BULTAUN GOLD EXPORTS LIMITED. All rights reserved.</p></footer>
+      <footer><div className="footerLogo"><img src="/bultaun-logo.svg" alt="BULTAUN Gold Exports Limited" style={{ width: 210, height: 210, objectFit: "contain" }} /></div><p>Partnership • Integrity • Prosperity</p><p>© 2026 BULTAUN GOLD EXPORTS LIMITED. All rights reserved.</p></footer>
     </main>
   );
 }
