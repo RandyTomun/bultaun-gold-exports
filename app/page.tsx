@@ -21,7 +21,7 @@ export default function Home() {
         <a className="brand officialBrand" href="#top" aria-label="BULTAUN home">
           <img className="headerLogo" src="/bultaun-logo.svg" alt="BULTAUN Gold Exports Limited" />
         </a>
-        <nav>
+        <nav aria-label="Primary navigation">
           <a href="#about">About</a><a href="#approach">Our Approach</a><a href="#services">Services</a>
           <a href="#region">Wau–Bulolo</a><a href="#responsibility">Responsible Mining</a>
           <a className="navButton" href="#contact">Partner With BULTAUN</a>
@@ -38,6 +38,10 @@ export default function Home() {
           <div className="values"><span>Partnership</span><i/><span>Integrity</span><i/><span>Prosperity</span></div>
         </div>
         <aside className="regionCard"><span>Initial regional focus</span><strong>Wau–Bulolo</strong><small>Morobe Province, Papua New Guinea</small></aside>
+      </section>
+
+      <section className="trustStrip" aria-label="Corporate priorities">
+        <span>Customary ownership respected</span><span>Transparent governance</span><span>Responsible gold pathways</span><span>Long-term PNG value</span>
       </section>
 
       <section className="section light" id="about">
@@ -63,13 +67,28 @@ export default function Home() {
       </section>
 
       <section className="region" id="region">
-        <div className="regionVisual"><div className="mountains">▲ ▲</div><div className="riverLine"/></div>
-        <div className="regionCopy"><p className="eyebrow">Our initial focus</p><h2>Wau–Bulolo</h2><p className="lead">Beginning in one of Papua New Guinea&apos;s historic gold regions.</p><p>The district offers a proven gold-mining heritage, experienced communities, existing Alluvial Mining Leases and comparatively developed regional infrastructure. BULTAUN aims to become a preferred mining development partner for customary landowners throughout the district.</p></div>
+        <div className="regionVisual"><div className="mountains">▲ ▲</div><div className="riverLine"/><span className="regionBadge">Morobe Province</span></div>
+        <div className="regionCopy"><p className="eyebrow">Our initial focus</p><h2>Wau–Bulolo</h2><p className="lead">Beginning in one of Papua New Guinea&apos;s historic gold regions.</p><p>The district offers a proven gold-mining heritage, experienced communities, existing Alluvial Mining Leases and comparatively developed regional infrastructure. BULTAUN aims to become a preferred mining development partner for customary landowners throughout the district.</p><a className="textLink" href="#contact">Discuss a Wau–Bulolo opportunity →</a></div>
       </section>
 
       <section className="section light" id="responsibility">
         <div className="heading centered"><p className="eyebrow dark">Our commitments</p><h2>Responsible Mining, Built Into Every Decision</h2></div>
         <div className="commitmentGrid">{commitments.map(([t,d]) => <article key={t}><div>◆</div><h3>{t}</h3><p>{d}</p></article>)}</div>
+      </section>
+
+      <section className="pathways" aria-label="Partnership pathways">
+        <article>
+          <p className="eyebrow">For AML holders & landowners</p>
+          <h2>Develop Your Mining Opportunity With a Professional Partner</h2>
+          <p>Begin a confidential discussion about your lease, project objectives, community expectations and development requirements.</p>
+          <a className="button gold" href="#contact">Submit a Mining Opportunity</a>
+        </article>
+        <article>
+          <p className="eyebrow">For investors & strategic partners</p>
+          <h2>Help Build Responsible Mining Projects in Papua New Guinea</h2>
+          <p>Engage with BULTAUN regarding project capital, equipment, technical services, refining, logistics and institutional partnerships.</p>
+          <a className="button outline" href="#contact">Register Strategic Interest</a>
+        </article>
       </section>
 
       <section className="roadmap">
@@ -78,11 +97,14 @@ export default function Home() {
       </section>
 
       <section className="contact" id="contact">
-        <div><p className="eyebrow dark">Start a conversation</p><h2>Let Us Build Sustainable Prosperity Together</h2><p>We welcome enquiries from AML holders, customary landowner representatives, investors, specialists, suppliers and strategic partners.</p></div>
-        <form><input placeholder="Full name"/><input type="email" placeholder="Email address"/><select defaultValue=""><option value="" disabled>Enquiry type</option><option>Landowner / AML partnership</option><option>Investor interest</option><option>Strategic partnership</option><option>General enquiry</option></select><textarea rows={5} placeholder="Tell us how you would like to work with BULTAUN"/><button type="button" className="button darkButton">Submit Enquiry</button><small>Demonstration form — email delivery will be connected before launch.</small></form>
+        <div><p className="eyebrow dark">Start a conversation</p><h2>Let Us Build Sustainable Prosperity Together</h2><p>We welcome enquiries from AML holders, customary landowner representatives, investors, specialists, suppliers and strategic partners.</p><div className="contactTags"><span>Landowner partnerships</span><span>Investor relations</span><span>Technical partners</span><span>Suppliers</span></div></div>
+        <form><label>Full name<input placeholder="Your name" /></label><label>Email address<input type="email" placeholder="name@example.com" /></label><label>Enquiry type<select defaultValue=""><option value="" disabled>Select an enquiry type</option><option>Landowner / AML partnership</option><option>Investor interest</option><option>Strategic partnership</option><option>General enquiry</option></select></label><label>Organisation<input placeholder="Company, group or organisation" /></label><label className="fullField">Message<textarea rows={5} placeholder="Tell us how you would like to work with BULTAUN" /></label><button type="button" className="button darkButton">Submit Enquiry</button><small>Demonstration form — email delivery will be connected before launch.</small></form>
       </section>
 
-      <footer><div className="footerLogo"><img className="footerLogoImage" src="/bultaun-logo.svg" alt="BULTAUN Gold Exports Limited" /></div><p>Partnership • Integrity • Prosperity</p><p>© 2026 BULTAUN GOLD EXPORTS LIMITED. All rights reserved.</p></footer>
+      <footer className="siteFooter">
+        <div className="footerPrimary"><div><div className="footerLogo"><img className="footerLogoImage" src="/bultaun-logo.svg" alt="BULTAUN Gold Exports Limited" /></div><p className="footerMotto">Partnership • Integrity • Prosperity</p></div><div><h3>Company</h3><a href="#about">About BULTAUN</a><a href="#approach">Our Approach</a><a href="#services">Services</a></div><div><h3>Engage</h3><a href="#contact">Landowner Enquiries</a><a href="#contact">Investor Relations</a><a href="#contact">Strategic Partnerships</a></div><div><h3>Commitment</h3><a href="#responsibility">Responsible Mining</a><a href="#region">Wau–Bulolo</a><a href="#contact">Contact</a></div></div>
+        <div className="footerBottom"><span>© 2026 BULTAUN GOLD EXPORTS LIMITED. All rights reserved.</span><span>Corporate establishment and project-development stage.</span></div>
+      </footer>
     </main>
   );
 }
