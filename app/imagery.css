@@ -1,0 +1,96 @@
+.heroV2{
+  background-image:
+    linear-gradient(90deg,rgba(5,17,14,.94) 0%,rgba(5,23,18,.82) 43%,rgba(5,25,20,.38) 72%,rgba(5,20,16,.62) 100%),
+    linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.45)),
+    url("https://commons.wikimedia.org/wiki/Special:Redirect/file/(Aerial_view_of_the_topography_of_Papua_New_Guinea)_-_DPLA_-_41f643be8659067f709272acd3904ca0.jpg");
+  background-size:cover;
+  background-position:center 48%;
+  background-attachment:fixed;
+}
+
+.heroV2::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,transparent 68%,rgba(6,18,15,.85) 100%);
+  z-index:0;
+}
+
+.heroV2 .heroContent,.heroV2 .regionCard,.heroV2 .heroGlow,.heroV2 .goldParticles{z-index:2}
+
+.mapVisual{
+  background-image:
+    linear-gradient(135deg,rgba(5,28,22,.2),rgba(4,20,16,.62)),
+    url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Bulolo.png");
+  background-size:cover;
+  background-position:center;
+}
+
+.mapVisual::after{
+  content:"Satellite view of Bulolo region";
+  position:absolute;
+  left:24px;
+  bottom:22px;
+  padding:9px 12px;
+  background:rgba(4,18,15,.78);
+  border-left:3px solid var(--gold);
+  color:#fff;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.heritageSection{
+  min-height:620px;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  background:#0b1714;
+  color:#fff;
+}
+
+.heritageImage{
+  min-height:620px;
+  position:relative;
+  background-image:
+    linear-gradient(90deg,rgba(5,15,12,.08),rgba(5,15,12,.38)),
+    url("https://s3-ap-southeast-2.amazonaws.com/awm-media/collection/132916/screen/4004842.JPG");
+  background-size:cover;
+  background-position:center;
+  filter:sepia(.18) contrast(1.05);
+}
+
+.heritageImage::after{
+  content:"Historical Bulolo gold dredging operations — archival image";
+  position:absolute;
+  left:28px;
+  right:28px;
+  bottom:26px;
+  padding:12px 15px;
+  background:rgba(4,15,12,.8);
+  border-left:3px solid var(--gold);
+  color:#fff;
+  font-size:12px;
+  letter-spacing:.04em;
+}
+
+.heritageCopy{padding:9vw 7vw;display:flex;flex-direction:column;justify-content:center}
+.heritageCopy h2{font-size:clamp(38px,4.3vw,66px);line-height:1.08;margin:14px 0 22px}
+.heritageCopy p{color:#c7d2ce;max-width:650px}
+.heritageCopy .lead{color:#fff}
+
+.imageCredits{margin-top:18px;font-size:10px!important;line-height:1.6;color:#899590!important;max-width:900px}
+.imageCredits a{text-decoration:underline;text-underline-offset:3px;color:#b6c1bd}
+
+@media(max-width:1000px){
+  .heroV2{background-attachment:scroll;background-position:58% center}
+  .heritageSection{grid-template-columns:1fr}
+  .heritageImage{min-height:480px}
+}
+
+@media(max-width:650px){
+  .heroV2{background-position:62% center}
+  .heritageImage{min-height:360px}
+  .heritageCopy{padding:78px 24px}
+  .mapVisual::after{left:16px;bottom:14px;font-size:9px}
+}
