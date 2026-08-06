@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RouteUpgrade from "./components/RouteUpgrade";
 import "./globals.css";
 import "./header.css";
 import "./logo-fix.css";
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
+        <RouteUpgrade />
         {children}
         <a className="imageCreditLink" href="/image-credits">Image credits</a>
       </body>
