@@ -1,0 +1,87 @@
+.header {
+  min-height: 230px;
+  height: 230px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.officialBrand {
+  flex: 0 0 auto;
+  height: 210px;
+  display: flex;
+  align-items: center;
+}
+
+.headerLogo,
+.footerLogoImage {
+  display: block;
+  width: 210px;
+  height: 210px;
+  object-fit: contain;
+}
+
+.headerLogo {
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.28));
+}
+
+.footerLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero {
+  min-height: calc(100vh - 230px);
+}
+
+.contact {
+  overflow: visible;
+  min-height: 0;
+}
+
+.contact form,
+.contact small {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1000px) {
+  .header {
+    min-height: 180px;
+    height: 180px;
+  }
+
+  .officialBrand,
+  .headerLogo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero {
+    min-height: calc(100vh - 180px);
+  }
+}
+
+@media (max-width: 650px) {
+  .header {
+    min-height: 132px;
+    height: 132px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .officialBrand,
+  .headerLogo {
+    width: 118px;
+    height: 118px;
+  }
+
+  .navButton {
+    padding: 9px 10px;
+    font-size: 10px;
+  }
+
+  .hero {
+    min-height: calc(100vh - 132px);
+  }
+}
