@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./header.css";
+import "./logo-fix.css";
 
 export const metadata: Metadata = {
   title: "BULTAUN Gold Exports Limited",
