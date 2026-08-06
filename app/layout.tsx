@@ -1,0 +1,16 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "BULTAUN Gold Exports Limited",
+  description:
+    "A Papua New Guinean mining development and gold export company focused on responsible partnerships with customary landowners.",
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
