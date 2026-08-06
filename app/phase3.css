@@ -1,0 +1,163 @@
+/* Phase 3: flagship homepage refinement */
+
+.heroV2{
+  min-height:calc(100vh - 120px);
+  grid-template-columns:minmax(0,1.08fr) minmax(420px,.92fr);
+  gap:clamp(36px,6vw,96px);
+  align-items:center;
+  padding:clamp(78px,8vw,132px) 6vw;
+  background:
+    linear-gradient(90deg,rgba(3,17,14,.98) 0%,rgba(3,28,23,.92) 46%,rgba(6,45,35,.68) 100%),
+    radial-gradient(circle at 78% 34%,rgba(240,200,93,.22),transparent 21%),
+    linear-gradient(145deg,#061713,#0b3c30 66%,#153d31);
+  isolation:isolate;
+}
+
+.heroV2::after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  right:-4%;
+  bottom:-8%;
+  width:58%;
+  height:78%;
+  background:
+    radial-gradient(ellipse at 64% 16%,rgba(240,200,93,.5) 0 2%,transparent 2.4%),
+    linear-gradient(145deg,transparent 0 41%,rgba(4,31,25,.82) 41.3% 55%,transparent 55.4%),
+    linear-gradient(155deg,transparent 0 48%,rgba(7,48,38,.96) 48.3% 68%,transparent 68.4%),
+    linear-gradient(168deg,transparent 0 58%,#041a15 58.3% 78%,transparent 78.4%);
+  clip-path:polygon(0 100%,0 36%,13% 28%,24% 42%,38% 17%,52% 38%,67% 9%,82% 35%,100% 20%,100% 100%);
+  opacity:.96;
+  filter:drop-shadow(0 -16px 28px rgba(0,0,0,.28));
+}
+
+.heroV2 .heroContent{
+  grid-column:1;
+  max-width:820px;
+  margin:0;
+  z-index:3;
+}
+
+.heroV2 .heroContent::before{
+  content:"";
+  position:absolute;
+  left:calc(100% + 5vw);
+  bottom:-86px;
+  width:clamp(300px,31vw,540px);
+  height:190px;
+  border:18px solid rgba(213,166,46,.58);
+  border-left-color:transparent;
+  border-right-color:transparent;
+  border-radius:50%;
+  transform:rotate(-9deg);
+  opacity:.68;
+  pointer-events:none;
+}
+
+.heroV2 h1{
+  font-size:clamp(48px,5.2vw,78px);
+  line-height:1.01;
+  letter-spacing:-.052em;
+  max-width:790px;
+  text-wrap:balance;
+}
+
+.heroV2 .heroText{
+  max-width:690px;
+  font-size:clamp(17px,1.3vw,20px);
+}
+
+.heroV2 .regionCard{
+  grid-column:2;
+  align-self:end;
+  justify-self:end;
+  width:min(360px,100%);
+  margin:0 0 4vh;
+  z-index:4;
+  box-shadow:0 24px 70px rgba(0,0,0,.34);
+}
+
+.heroV2 .actions .button{
+  min-height:54px;
+  padding-inline:28px;
+}
+
+.credibilityStrip{
+  position:relative;
+  z-index:5;
+  box-shadow:0 18px 50px rgba(0,0,0,.16);
+}
+
+.light,.whySection,.darkSection,.region,.landownerSection,.roadmap,.investorSection,.contact{
+  position:relative;
+}
+
+.light::before,.whySection::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:linear-gradient(135deg,rgba(213,166,46,.035) 25%,transparent 25%),linear-gradient(225deg,rgba(213,166,46,.025) 25%,transparent 25%);
+  background-size:44px 44px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.7),transparent 34%);
+}
+
+.heading h2{
+  text-wrap:balance;
+}
+
+.twoCol,.whyGrid,.modelGrid,.serviceGrid,.commitmentGrid,.timeline,.investorGrid{
+  position:relative;
+  z-index:1;
+}
+
+.whyGrid article,.premiumServices article,.commitmentGrid article,.investorGrid article{
+  border-radius:3px;
+}
+
+.landownerSection{
+  background:
+    linear-gradient(90deg,rgba(4,24,19,.96),rgba(5,48,37,.8)),
+    radial-gradient(circle at 84% 34%,rgba(213,166,46,.18),transparent 24%);
+}
+
+.landownerContent{
+  max-width:900px;
+}
+
+.premiumTimeline div{
+  position:relative;
+}
+
+.premiumTimeline div::before{
+  content:"";
+  position:absolute;
+  top:-6px;
+  left:20px;
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  background:var(--gold2);
+  box-shadow:0 0 0 6px rgba(240,200,93,.09);
+}
+
+.corporateFooter{
+  border-top:1px solid rgba(213,166,46,.35);
+}
+
+@media(max-width:1180px){
+  .heroV2{grid-template-columns:1fr;min-height:auto;padding-top:86px;padding-bottom:92px}
+  .heroV2 .heroContent{grid-column:1;max-width:860px}
+  .heroV2 .regionCard{grid-column:1;justify-self:start;margin-top:34px;margin-bottom:0}
+  .heroV2::after{width:64%;height:52%;right:-16%;opacity:.58}
+  .heroV2 .heroContent::before{display:none}
+}
+
+@media(max-width:760px){
+  .heroV2{padding:68px 24px 76px;background:linear-gradient(180deg,rgba(3,17,14,.98),rgba(4,39,31,.92))}
+  .heroV2 h1{font-size:clamp(43px,13vw,62px)}
+  .heroV2::after{width:108%;height:38%;right:-38%;bottom:-3%;opacity:.38}
+  .heroV2 .regionCard{width:100%}
+  .heroV2 .actions{width:100%}
+  .heroV2 .actions .button{width:100%}
+}
