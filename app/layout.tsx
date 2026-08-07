@@ -10,7 +10,8 @@ import "./imagery.css";
 import "./multipage.css";
 import "./photo-integration.css";
 import "./gallery.css";
-import "./header-upgrade.css";
+import "./header-premium.css";
+import "./mobile-menu.css";
 
 export const metadata: Metadata = {
   title: "BULTAUN Gold Exports Limited",
