@@ -2,13 +2,13 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import MobileMenu from "./MobileMenu";
 
 const routes: Record<string,string> = {
   "About Us":"/about",
   "Services":"/services",
   "Projects":"/projects",
   "Gallery":"/gallery",
-  "Media Gallery":"/gallery",
   "Landowner Partnerships":"/landowners",
   "Landowners":"/landowners",
   "Investors":"/investors",
@@ -21,33 +21,28 @@ const routes: Record<string,string> = {
   "Partner With BULTAUN":"/contact",
 };
 
+const homeMobileItems = [
+  { label: "About Us", href: "/about" },
+  { label: "Our Approach", href: "/#approach" },
+  { label: "Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Landowner Partnerships", href: "/landowners" },
+  { label: "Investors", href: "/investors" },
+  { label: "Responsible Mining", href: "/responsible-mining" },
+  { label: "Contact", href: "/contact" },
+];
+
 export default function RouteUpgrade(){
   const pathname=usePathname();
   useEffect(()=>{
     if(pathname!=="/") return;
-
-    const headerNav=document.querySelector<HTMLElement>("header nav");
-    if(headerNav && !headerNav.querySelector('a[href="/gallery"]')){
-      const gallery=document.createElement("a");
-      gallery.href="/gallery";
-      gallery.textContent="Gallery";
-      const landowners=[...headerNav.querySelectorAll("a")].find((link)=>link.textContent?.trim()==="Landowner Partnerships");
-      headerNav.insertBefore(gallery, landowners || headerNav.querySelector(".navButton"));
-    }
-
-    const resourcesHeading=[...document.querySelectorAll("footer h4")].find((heading)=>heading.textContent?.trim()==="Resources");
-    const resourcesColumn=resourcesHeading?.parentElement;
-    if(resourcesColumn && !resourcesColumn.querySelector('a[href="/gallery"]')){
-      const gallery=document.createElement("a");
-      gallery.href="/gallery";
-      gallery.textContent="Media Gallery";
-      resourcesHeading?.insertAdjacentElement("afterend",gallery);
-    }
-
     document.querySelectorAll<HTMLAnchorElement>("header a, footer a").forEach((link)=>{
       const label=link.textContent?.trim() || "";
       if(routes[label]) link.href=routes[label];
     });
   },[pathname]);
-  return null;
+
+  if(pathname !== "/") return null;
+  return <div className="homeMobileMenu"><MobileMenu items={homeMobileItems} /></div>;
 }
