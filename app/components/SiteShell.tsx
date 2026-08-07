@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import MobileMenu from "./MobileMenu";
 
 const nav = [
   ["About Us", "/about"],
@@ -12,6 +13,8 @@ const nav = [
   ["Resources", "/documents"],
 ];
 
+const mobileNav = nav.map(([label, href]) => ({ label, href }));
+
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
     <div className="multiPageSite">
@@ -23,6 +26,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           {nav.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
           <Link href="/contact" className="multiCta">Partner With BULTAUN</Link>
         </nav>
+        <MobileMenu items={mobileNav} />
       </header>
       {children}
       <footer className="multiFooter">
