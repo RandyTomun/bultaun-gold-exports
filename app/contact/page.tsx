@@ -1,2 +1,34 @@
+import Link from "next/link";
 import { PageHero, Section, SiteShell } from "../components/SiteShell";
-export default function Contact(){return <SiteShell><PageHero eyebrow="Contact BULTAUN" title="Start a Professional Conversation" intro="We welcome preliminary enquiries from AML holders, customary landowner representatives, investors, technical specialists, equipment providers, suppliers and strategic partners."/><Section title="Contact and Partnership Enquiries"><div className="contactGrid"><div><h3>Choose the appropriate enquiry type</h3><div className="featureList"><span>Landowner or AML partnership</span><span>Investor or financing interest</span><span>Technical or strategic partnership</span><span>Equipment and supplier registration</span><span>Careers and expressions of interest</span><span>General corporate enquiry</span></div><div className="noticeBox">Official email addresses, telephone numbers and office details will be published after confirmation and approval.</div></div><form><input required placeholder="Full name"/><input required type="email" placeholder="Email address"/><input placeholder="Organisation, company, clan or group"/><select defaultValue=""><option value="" disabled>Select enquiry type</option><option>Landowner / AML partnership</option><option>Investor interest</option><option>Strategic partnership</option><option>Supplier registration</option><option>Careers</option><option>General enquiry</option></select><textarea required rows={7} placeholder="Tell us about your enquiry"/><button type="button" className="pageCta">Submit Enquiry</button></form></div></Section></SiteShell>}
+
+export default function Contact() {
+  return (
+    <SiteShell>
+      <PageHero
+        eyebrow="Contact BULTAUN"
+        title="Partnership enquiries"
+        intro="BULTAUN welcomes preliminary enquiries from customary landowner representatives, alluvial mining leaseholders, investors, suppliers and technical partners."
+      />
+      <Section title="Enquiry information">
+        <p className="lead">BULTAUN will publish its official contact details here once they are confirmed. Online submissions are currently unavailable.</p>
+        <div className="contentGrid">
+          <article className="contentCard">
+            <h3>Landowners & leaseholders</h3>
+            <p>Learn how BULTAUN approaches initial discussions with landowner representatives and alluvial mining leaseholders.</p>
+            <Link className="homeTextLink" href="/landowners">Landowner partnerships <span aria-hidden="true">↗</span></Link>
+          </article>
+          <article className="contentCard">
+            <h3>Investors & strategic partners</h3>
+            <p>Read about the company’s proposed approach to due diligence, governance and project development.</p>
+            <Link className="homeTextLink" href="/investors">Strategic partnerships <span aria-hidden="true">↗</span></Link>
+          </article>
+          <article className="contentCard">
+            <h3>Suppliers & contractors</h3>
+            <p>See the equipment, technical services and other capabilities relevant to future projects.</p>
+            <Link className="homeTextLink" href="/suppliers">Supplier opportunities <span aria-hidden="true">↗</span></Link>
+          </article>
+        </div>
+      </Section>
+    </SiteShell>
+  );
+}
